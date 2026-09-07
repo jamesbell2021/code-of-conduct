@@ -2,7 +2,7 @@
 
 A single-page, self-contained web app that walks students through the Belfast Met **Student Code of Conduct** in plain English, checks understanding with a short quiz, and lets them sign, download and email a declaration confirming they've read and agree to it.
 
-Live at: (add your GitHub Pages URL here once enabled)
+Live at: https://jamesbell2021.github.io/code-of-conduct/
 
 ## What it does
 
