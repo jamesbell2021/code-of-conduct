@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Code of Conduct — know it, understand it, sign it</title>
+<meta name="description" content="A plain-English guide to the Belfast Met Student Code of Conduct, with a quiz and a digital declaration you can sign, download and email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F2E8; --ink:#1B1533;
+  --orange:#FF5A1F; --teal:#00A6A6; --yellow:#FFC93C; --pink:#F0468C;
+  --soft:#4A4166; --dim:#7C7395;
+  --shadow:5px 5px 0 var(--ink); --shadow-sm:3px 3px 0 var(--ink);
+  --border:3px solid var(--ink); --border-sm:2px solid var(--ink);
+  --disp:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  background-image:radial-gradient(var(--ink) .5px,transparent .5px);background-size:22px 22px}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:800;letter-spacing:-.02em;line-height:1}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+a{color:var(--ink)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+
+/* title */
+.titlescreen{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;position:relative}
+.titlescreen .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:7px 14px;margin-bottom:22px}
+.titlescreen h1{font-size:clamp(42px,11vw,110px);margin:0;text-transform:uppercase}
+.titlescreen h1 em{font-style:normal;display:block;color:var(--orange);-webkit-text-stroke:2px var(--ink)}
+.titlescreen .sub{max-width:48ch;margin:24px 0 34px;font-size:18px}
+.blob{position:absolute;border:var(--border);z-index:-1}
+.b1{width:120px;height:120px;background:var(--teal);border-radius:50%;top:12%;left:8%}
+.b2{width:80px;height:80px;background:var(--pink);top:22%;right:11%;transform:rotate(14deg)}
+.b3{width:150px;height:44px;background:var(--orange);bottom:16%;left:14%;transform:rotate(-7deg)}
+.b4{width:60px;height:60px;background:var(--yellow);border-radius:50%;bottom:24%;right:16%}
+@media (max-width:640px){.blob{display:none}}
+
+.btn{background:var(--yellow);border:var(--border);box-shadow:var(--shadow);padding:16px 34px;font-family:var(--disp);font-weight:800;font-size:19px;text-transform:uppercase;transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:var(--shadow)}
+.btn-sm{padding:11px 20px;font-size:14px;box-shadow:var(--shadow-sm)}
+.btn-t{background:var(--teal);color:#fff}
+.btn-p{background:var(--pink);color:#fff}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:var(--ink);border-bottom:var(--border)}
+.nav-in{max-width:1000px;margin:0 auto;padding:8px 20px}
+.nav-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:3px 0}
+.nav-btn{background:transparent;border:2px solid transparent;color:#C9C2E0;font-family:var(--mono);font-size:12px;letter-spacing:.03em;padding:6px 9px;text-transform:uppercase}
+.nav-btn:hover{color:var(--paper);border-color:var(--soft)}
+.nav-btn[aria-current="true"]{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.progress{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;color:#9A92B8;margin-left:auto}
+.progress-bar{width:64px;height:8px;background:#3A3255;border:2px solid #5A5178}
+.progress-bar i{display:block;height:100%;background:var(--teal);width:0;transition:width .4s}
+
+/* pages */
+.page{padding:46px 0 70px}
+.page[hidden]{display:none}
+.tag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 11px;margin-bottom:14px}
+.page h2{font-size:clamp(26px,5.5vw,46px);margin:0 0 14px;text-transform:uppercase}
+.page h2 em{font-style:normal;color:var(--orange)}
+.page h3{font-size:22px;margin:32px 0 12px}
+.lede{font-size:18px;max-width:64ch;margin:0 0 28px}
+
+.card{background:#fff;border:var(--border);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:18px}
+.card h4{font-size:19px;margin:0 0 8px}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+.tint-o{background:var(--orange);color:#fff}
+.tint-t{background:var(--teal);color:#fff}
+.tint-y{background:var(--yellow)}
+.tint-p{background:var(--pink);color:#fff}
+.tint-o a,.tint-t a,.tint-p a{color:#fff}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+
+.steps{counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;position:relative;padding:0 0 0 52px;margin-bottom:16px;min-height:38px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:38px;height:38px;background:var(--teal);color:#fff;border:var(--border-sm);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;font-size:17px}
+.steps li b{font-family:var(--disp);font-weight:700;display:block;font-size:16.5px;margin-bottom:2px}
+
+.acc{background:#fff;border:var(--border);box-shadow:var(--shadow-sm);margin-bottom:12px}
+.acc-head{width:100%;display:flex;gap:14px;align-items:center;padding:16px 18px;background:none;border:none;text-align:left}
+.acc-head .n{font-family:var(--mono);font-size:12px;background:var(--ink);color:var(--paper);padding:4px 8px;flex-shrink:0}
+.acc-head .t{font-family:var(--disp);font-weight:700;font-size:17px;flex:1}
+.acc-head .cx{font-size:20px;color:var(--orange);font-weight:700}
+.acc-body{padding:0 18px 18px;border-top:2px dashed var(--ink);font-size:15px}
+.acc-body[hidden]{display:none}
+.acc-body ul{margin:10px 0;padding-left:20px}
+.acc-body li{margin-bottom:8px}
+.acc.care .acc-head .n{background:var(--pink)}
+
+.quizbox{background:#fff;border:var(--border);box-shadow:var(--shadow);padding:24px 26px;max-width:760px}
+.qn{font-family:var(--mono);font-size:12px;color:var(--dim);margin:0 0 6px}
+.qq{font-family:var(--disp);font-weight:700;font-size:18px;margin:0 0 16px}
+.opt{display:block;width:100%;text-align:left;background:var(--paper);border:var(--border-sm);padding:13px 15px;margin-bottom:9px;font-size:15px}
+.opt:hover{border-color:var(--orange)}
+.opt.right{background:var(--teal);color:#fff;border-color:var(--ink)}
+.opt.wrong{background:var(--pink);color:#fff;border-color:var(--ink)}
+.opt:disabled{cursor:default}
+.fb{border:2px dashed var(--ink);padding:14px 16px;font-size:15px;margin:6px 0 14px}
+.fb[hidden]{display:none}
+.fb b{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:5px;color:var(--orange)}
+.fb.bad{border-color:var(--pink)}
+.fb.bad b{color:var(--pink)}
+
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;align-items:center}
+.search{flex:1 1 240px;border:var(--border);background:#fff;padding:12px 14px;font:inherit;box-shadow:var(--shadow-sm)}
+.count{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.entry{border-bottom:var(--border-sm);padding:14px 0}
+.entry b{font-family:var(--disp);font-weight:700;font-size:17px;display:block}
+.entry p{margin:4px 0 0;font-size:15px}
+
+.gl{background:none;border:none;padding:0;color:inherit;font:inherit;border-bottom:2px dotted var(--orange);cursor:help}
+.gl:hover{background:var(--yellow)}
+.pop{position:absolute;z-index:60;max-width:320px;background:var(--ink);color:#EDE9F7;border:var(--border);box-shadow:5px 5px 0 var(--orange);padding:14px 16px;font-size:14px;line-height:1.55}
+.pop[hidden]{display:none}
+.pop b{display:block;font-family:var(--disp);font-weight:700;color:#fff;margin-bottom:4px;font-size:16px}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(140%);z-index:60;background:var(--ink);color:var(--paper);border:var(--border);box-shadow:5px 5px 0 var(--orange);padding:13px 20px;transition:transform .35s cubic-bezier(.2,.8,.3,1);text-align:center}
+.toast.up{transform:translateX(-50%) translateY(0)}
+.toast .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;color:var(--yellow);text-transform:uppercase}
+.toast .m{font-family:var(--disp);font-weight:700;font-size:17px}
+.sound-btn{position:fixed;right:14px;bottom:14px;z-index:50;background:var(--ink);color:var(--paper);border:var(--border);box-shadow:4px 4px 0 var(--teal);padding:9px 15px;font-family:var(--mono);font-size:12px;text-transform:uppercase}
+
+/* declaration form */
+.formcard{background:#fff;border:var(--border);box-shadow:var(--shadow);padding:26px 28px}
+.field{margin-bottom:18px}
+.field label{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.field input[type=text],.field input[type=email]{width:100%;border:var(--border-sm);background:var(--paper);padding:11px 13px;font:inherit;font-size:15px}
+.field input:read-only{color:var(--dim)}
+.checklist{border-top:2px dashed var(--ink);border-bottom:2px dashed var(--ink);padding:18px 0;margin:22px 0}
+.checklist label{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:15px}
+.checklist label:last-child{margin-bottom:0}
+.checklist input[type=checkbox]{width:22px;height:22px;flex-shrink:0;margin-top:1px;accent-color:var(--teal)}
+.sigwrap{border:var(--border-sm);background:var(--paper);touch-action:none}
+.sigwrap canvas{display:block;width:100%;height:180px;cursor:crosshair}
+.sig-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px;flex-wrap:wrap}
+.sig-hint{font-size:13px;color:var(--dim)}
+.declare-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.email-hint{font-size:13.5px;color:var(--dim);margin-top:10px;max-width:60ch}
+
+.site-footer{border-top:var(--border);padding:26px 0 90px;font-size:13.5px;color:var(--soft)}
+.site-footer p{margin:0 0 7px;max-width:74ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  body{background:#fff}
+  .nav,.sound-btn,.toast,.pop,.titlescreen,.tools,.site-footer{display:none}
+  #shell{display:block!important}
+  .page{display:none!important}
+  #printable{display:block!important}
+}
+#printable{display:none}
+</style>
+</head>
+<body>
+
+<button class="sound-btn" id="sound" aria-pressed="false">♪ Sound off</button>
+<div class="toast" id="toast"><div class="l">Unlocked</div><div class="m"></div></div>
+<div class="pop" id="pop" hidden role="dialog"></div>
+
+<div class="titlescreen" id="title">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+  <span class="kicker" id="kicker">Belfast Met · Student Code of Conduct</span>
+  <h1>The<em>Code</em></h1>
+  <p class="sub">What Belfast Met expects of you, in plain English — why it exists, what counts as breaking it, and what happens if you do. Read it, take the quiz, then sign and keep a copy for your own records.</p>
+  <button class="btn" id="start">▶ Press start</button>
+</div>
+
+<div id="shell" hidden>
+<nav class="nav"><div class="nav-in">
+  <div class="nav-row">
+    <button class="nav-btn" data-p="why">01 Why this exists</button>
+    <button class="nav-btn" data-p="obl">02 Your obligations</button>
+    <button class="nav-btn" data-p="mis">03 Misconduct</button>
+    <button class="nav-btn" data-p="con">04 Consequences</button>
+    <button class="nav-btn" data-p="quiz">05 Quiz</button>
+    <button class="nav-btn" data-p="sign">06 Sign &amp; commit</button>
+    <button class="nav-btn" data-p="gl">07 Glossary</button>
+    <div class="progress"><span id="progtxt">0/7</span><div class="progress-bar"><i></i></div></div>
+  </div>
+</div></nav>
+
+<!-- ============ 01 WHY ============ -->
+<section class="page" id="why" hidden><div class="wrap">
+  <span class="tag">01 — Why this exists</span>
+  <h2>The <em>short version</em></h2>
+  <p class="lede">This page is a plain-English guide to Belfast Met's Student Code of Conduct — the actual policy is a short but formal document, and this walks through what it means for you day to day. Where this page and the real policy differ, the real policy wins.</p>
+
+  <div class="card tint-t">
+    <h4>What the College is trying to do</h4>
+    <p>Belfast Met wants campus — and every place learning happens, from a classroom to a placement to an online session — to be safe, inclusive and welcoming for everyone in it: students, staff, visitors, neighbours, and the employers who take students on placement. The Code exists to protect that, and to protect the College's own reputation from students who don't hold up their end.</p>
+  </div>
+
+  <div class="card">
+    <h4>Who it applies to, and when</h4>
+    <p>Every Belfast Met student, from the moment you enrol until you finish your course. It doesn't switch off outside the building. The Code applies:</p>
+    <div class="grid4">
+      <div class="card tint-y" style="margin:0"><h4 style="font-size:16px">On campus</h4><p style="font-size:14.5px">Any Belfast Met site, any time.</p></div>
+      <div class="card tint-y" style="margin:0"><h4 style="font-size:16px">At College events off campus</h4><p style="font-size:14.5px">Trips, competitions, socials, anything run by the College elsewhere.</p></div>
+      <div class="card tint-y" style="margin:0"><h4 style="font-size:16px">On placement or at work</h4><p style="font-size:14.5px">You're representing the College there too.</p></div>
+      <div class="card tint-y" style="margin:0"><h4 style="font-size:16px">In your accommodation, and online</h4><p style="font-size:14.5px">Including student housing and remote/online classes.</p></div>
+    </div>
+  </div>
+
+  <div class="card tint-p">
+    <h4>The one thing worth remembering</h4>
+    <p>This isn't really a list of rules to memorise. It's what "being a decent person other people can rely on" looks like, written down so there's no ambiguity about where the line is — and what happens if you cross it.</p>
+  </div>
+</div></section>
+
+<!-- ============ 02 OBLIGATIONS ============ -->
+<section class="page" id="obl" hidden><div class="wrap">
+  <span class="tag">02 — Your obligations</span>
+  <h2>Learning the <em>Met Way</em></h2>
+  <p class="lede">Belfast Met wants every student to live out four values — Collaboration, Ambition, Respect and Excellence, or "CARE". They're the spirit behind everything on this page.</p>
+
+  <div id="care"></div>
+
+  <h3>The specifics</h3>
+  <p class="lede" style="font-size:16px">Underneath the values, here's what you're actually expected to do.</p>
+  <ol class="steps" id="obligations"></ol>
+</div></section>
+
+<!-- ============ 03 MISCONDUCT ============ -->
+<section class="page" id="mis" hidden><div class="wrap">
+  <span class="tag">03 — Misconduct</span>
+  <h2>What counts as <em>breaking it</em></h2>
+  <p class="lede">The policy splits misconduct into ten categories. None of these lists are exhaustive — behaving badly in a way that isn't spelled out here can still get you in trouble. Tap each one.</p>
+  <div id="misconduct"></div>
+
+  <div class="card tint-t">
+    <h4>If something's happened to you</h4>
+    <p>If you've experienced anything covered by <strong>Abusive</strong> or <strong>Sexual misconduct</strong> above — from someone else, whether they're a student or not — that's not something you have to sort out alone. Talk to <strong>James</strong>, contact <strong>Safeguarding</strong> at <a href="mailto:safeguarding@belfastmet.ac.uk">safeguarding@belfastmet.ac.uk</a>, or reach <strong>Student Counselling</strong> via Inspire — confidential, 24/7, all year: <strong>0808 800 0032</strong> or <a href="https://www.inspiresupporthub.org/students/">inspiresupporthub.org/students</a> (log-on <strong>BMETHUB</strong>). You don't need to be in crisis, and you don't need a referral.</p>
+  </div>
+</div></section>
+
+<!-- ============ 04 CONSEQUENCES ============ -->
+<section class="page" id="con" hidden><div class="wrap">
+  <span class="tag">04 — Consequences</span>
+  <h2>What happens if you <em>don't</em></h2>
+  <p class="lede">Breaking the Code isn't dealt with by this page — it goes through the College's Student Disciplinary Policy. Here's the shape of it.</p>
+
+  <ol class="steps">
+    <li><b>A breach is alleged</b> Someone reports it, or staff observe it directly.</li>
+    <li><b>It's investigated</b> Under the Student Disciplinary Policy, not made up on the spot.</li>
+    <li><b>If it's proven, action follows</b> What happens depends on how serious it is and whether it's happened before.</li>
+    <li><b>Serious or repeated breaches can end your place</b> Dismissal from the College is a real possible outcome, not an idle threat.</li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card tint-y">
+      <h4>This list isn't exhaustive</h4>
+      <p>The ten categories in section 03 are examples, not the complete set. Something can still count as misconduct even if it isn't written down word for word.</p>
+    </div>
+    <div class="card tint-o">
+      <h4>If you disagree with an outcome</h4>
+      <p>Talk to James first. The disciplinary process itself has its own right of appeal, and you'll be told how to use it if it comes to that.</p>
+    </div>
+  </div>
+
+  <h3>Complaints</h3>
+  <div class="card">
+    <p>Unhappy about how the College has handled something? Raise it through the College's own complaints procedure first — that's what it's there for, and most things get sorted through it.</p>
+    <p>Still not satisfied once you've been through that? You can take it to the <strong>Northern Ireland Public Services Ombudsman</strong> (NIPSO), who act as an independent referee — but they'll normally expect you to have used the College's process first.</p>
+    <p style="font-size:14.5px;color:var(--dim)">Northern Ireland Public Services Ombudsman, Progressive House, 33 Wellington Place, Belfast, BT1 6HN.</p>
+  </div>
+</div></section>
+
+<!-- ============ 05 QUIZ ============ -->
+<section class="page" id="quiz" hidden><div class="wrap">
+  <span class="tag">05 — Check yourself</span>
+  <h2>Did that <em>go in?</em></h2>
+  <p class="lede">Eight questions on the parts people most often get wrong. No pass mark, nothing recorded — it's just so you know before you sign, not after.</p>
+  <div class="quizbox" id="cquiz"></div>
+</div></section>
+
+<!-- ============ 06 SIGN ============ -->
+<section class="page" id="sign" hidden><div class="wrap">
+  <span class="tag">06 — Sign &amp; commit</span>
+  <h2>Make it <em>official</em></h2>
+  <p class="lede">Fill this in, sign it, and you'll get a copy to keep and a copy to send to James. Nothing here is stored anywhere else — it only exists on this page until you download or email it.</p>
+
+  <div class="card tint-t">
+    <h4>Before you sign</h4>
+    <p>This page is a summary. The document that's actually binding is the College's own policy — <a href="https://www.belfastmet.ac.uk/media/ub0nm4j3/student-code-of-conduct.pdf" target="_blank" rel="noopener">read the full Student Code of Conduct (PDF) →</a>. Have a skim of it before you sign below.</p>
+  </div>
+
+  <div class="formcard">
+    <div class="field"><label for="fName">Full name</label><input id="fName" type="text" placeholder="Your full name" autocomplete="name"></div>
+    <div class="field"><label for="fEmail">Belfast Met email</label><input id="fEmail" type="email" placeholder="you@student.belfastmet.ac.uk" autocomplete="email"></div>
+    <div class="field"><label for="fCourse">Course / programme</label><input id="fCourse" type="text" placeholder="e.g. Creative Media Practice (Game Development)" autocomplete="off"></div>
+    <div class="field"><label for="fCampus">Campus</label><input id="fCampus" type="text" placeholder="e.g. Castlereagh" autocomplete="off"></div>
+
+    <div class="checklist">
+      <label><input type="checkbox" id="c1"><span>I have read this summary and the full Student Code of Conduct policy, and I understand what's expected of me as a Belfast Met student.</span></label>
+      <label><input type="checkbox" id="c2"><span>I understand the Code applies to me from enrolment until I finish my course — on campus, at College events off campus, on placement or at work, in my accommodation, and online — and that breaching it can lead to disciplinary action, up to and including dismissal from the College for serious or repeated breaches.</span></label>
+      <label><input type="checkbox" id="c3"><span>I agree to abide by the Student Code of Conduct for the duration of my course at Belfast Met.</span></label>
+    </div>
+
+    <div class="field">
+      <label for="sigpad">Sign here</label>
+      <div class="sigwrap"><canvas id="sigpad"></canvas></div>
+      <div class="sig-row">
+        <span class="sig-hint">Draw with your mouse, trackpad or finger.</span>
+        <button class="btn btn-sm" id="sigClear" type="button">Clear signature</button>
+      </div>
+    </div>
+
+    <div class="field"><label for="fDate">Date</label><input id="fDate" type="text" readonly></div>
+  </div>
+
+  <div class="fb" id="declareMsg" hidden></div>
+
+  <div class="declare-actions">
+    <button class="btn" id="btnDownload">⬇ Download my signed copy</button>
+    <button class="btn btn-sm btn-t" id="btnPrint">🖶 Print / Save as PDF</button>
+    <button class="btn btn-sm btn-p" id="btnEmail" disabled>✉ Email a copy to James Bell</button>
+  </div>
+  <p class="email-hint">The email button opens your own email app, pre-addressed to <strong>jbell@belfastmet.ac.uk</strong>, with the declaration text filled in. Browsers won't let a webpage attach a file to your email automatically, so <strong>download your copy first</strong> and attach it yourself before you hit send.</p>
+</div></section>
+
+<!-- ============ 07 GLOSSARY ============ -->
+<section class="page" id="gl" hidden><div class="wrap">
+  <span class="tag">07 — Glossary</span>
+  <h2>Words from the <em>policy</em></h2>
+  <p class="lede">Formal policy language, explained.</p>
+  <div class="tools">
+    <input id="search" class="search" type="search" placeholder="Search a term…" aria-label="Search glossary">
+  </div>
+  <p class="count" id="count"></p>
+  <div id="glist"></div>
+</div></section>
+
+<footer class="site-footer"><div class="wrap">
+  <p>A plain-English student guide to Belfast Met's Student Code of Conduct (v10.0, reviewed 02/07/2026), built for induction. It's a summary, not the policy — where the two differ, the College's published <a href="https://www.belfastmet.ac.uk/media/ub0nm4j3/student-code-of-conduct.pdf" target="_blank" rel="noopener">Student Code of Conduct (PDF)</a> is what counts.</p>
+  <p>Nothing typed or drawn on this page is sent anywhere or stored anywhere except your own downloaded file and, if you choose to send it, your own email. Questions: <a href="mailto:jbell@belfastmet.ac.uk">jbell@belfastmet.ac.uk</a>.</p>
+</div></footer>
+
+<div id="printable"></div>
+</div>
+
+<script>
+var $=function(i){return document.getElementById(i);};
+var PDF_URL="https://www.belfastmet.ac.uk/media/ub0nm4j3/student-code-of-conduct.pdf";
+
+/* ---------- audio (chiptune toggle, same engine as the Day One guide) ---------- */
+var Snd={ctx:null,on:false,mus:null,timer:null,
+ boot:function(){if(this.ctx)return;var C=window.AudioContext||window.webkitAudioContext;if(!C)return;
+  this.ctx=new C();this.mus=this.ctx.createGain();this.mus.gain.value=.12;this.mus.connect(this.ctx.destination);},
+ hz:function(n){return 440*Math.pow(2,(n-69)/12);},
+ note:function(n,at,dur,type,vol,dest){if(!this.on||!this.ctx)return;
+  var o=this.ctx.createOscillator(),g=this.ctx.createGain();
+  o.type=type||"square";o.frequency.value=this.hz(n);
+  g.gain.setValueAtTime(0,at);g.gain.linearRampToValueAtTime(vol,at+.01);
+  g.gain.exponentialRampToValueAtTime(.0001,at+dur);
+  o.connect(g);g.connect(dest||this.ctx.destination);o.start(at);o.stop(at+dur+.05);},
+ fx:function(k){if(!this.on||!this.ctx)return;var t=this.ctx.currentTime;
+  var bank={blip:[[81,0,.05,"square",.12]],
+   coin:[[88,0,.06,"square",.13],[95,.06,.14,"square",.11]],
+   open:[[69,0,.05,"triangle",.13],[76,.05,.08,"triangle",.11]],
+   right:[[76,0,.07,"square",.12],[83,.07,.14,"square",.11]],
+   wrong:[[52,0,.14,"sawtooth",.14],[47,.10,.20,"sawtooth",.12]],
+   unlock:[[72,0,.08,"square",.13],[76,.08,.08,"square",.13],[79,.16,.08,"square",.13],[84,.24,.28,"square",.14],[60,.24,.34,"triangle",.11]],
+   sign:[[72,0,.1,"square",.14],[79,.1,.1,"square",.14],[84,.2,.1,"square",.14],[91,.3,.4,"square",.15]]};
+  var s=bank[k]||[];for(var i=0;i<s.length;i++){var n=s[i];this.note(n[0],t+n[1],n[2],n[3],n[4]);}},
+ loop:function(){if(!this.on||!this.ctx)return;var self=this,b=.34,t0=this.ctx.currentTime+.05;
+  var bars=[[52,[64,67,71]],[57,[64,69,73]],[50,[62,66,69]],[55,[67,71,74]]];
+  bars.forEach(function(ch,i){var s=t0+i*b*8;
+   for(var k=0;k<8;k+=2) self.note(ch[0]-12,s+k*b,b*1.35,"triangle",.13,self.mus);
+   var arp=[ch[1][0],ch[1][2],ch[1][1],ch[1][2]];
+   for(var j=0;j<8;j++) self.note(arp[j%4],s+j*b,.19,"square",.045,self.mus);});
+  this.timer=setTimeout(function(){self.loop();},4*8*b*1000);},
+ toggle:function(){this.boot();if(!this.ctx)return false;
+  if(this.ctx.state==="suspended")this.ctx.resume();
+  this.on=!this.on;if(this.on){this.loop();this.fx("coin");}else{clearTimeout(this.timer);}
+  return this.on;}};
+$("sound").addEventListener("click",function(){var on=Snd.toggle();
+  this.textContent=on?"♪ Sound on":"♪ Sound off";this.setAttribute("aria-pressed",String(on));});
+
+/* ---------- toast ---------- */
+var tt;
+function toast(m,l){var t=$("toast");t.querySelector(".m").textContent=m;
+  t.querySelector(".l").textContent=l||"Unlocked";t.classList.add("up");
+  clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("up");},2600);}
+
+/* ---------- glossary ---------- */
+var TERMS={
+ code:["Student Code of Conduct","Belfast Met's own name for this policy — the standard of behaviour expected of every student, from enrolment to course completion."],
+ misconduct:["Misconduct","Any proven breach of the Code. Covers ten categories, from attendance problems to serious safety and safeguarding issues — see section 03."],
+ disciplinary:["Student Disciplinary Policy","The separate policy that governs how an alleged breach of the Code is actually investigated and dealt with. This page explains the Code; that policy explains the process."],
+ dismissal:["Dismissal","Losing your place on the course. The most serious outcome available for a proven, serious or repeated breach of the Code."],
+ nipso:["NIPSO","Northern Ireland Public Services Ombudsman — an independent body you can complain to if you're still unhappy after going through the College's own complaints process."],
+ safeguarding:["Safeguarding","The College team responsible for preventing and responding to abuse or harm. Contact them directly if you or someone else is at risk: safeguarding@belfastmet.ac.uk."],
+ iaup:["IT Acceptable Usage Policy","The College's rules for using its computers, network and accounts. Breaching it is one of the specific examples of IT misconduct."],
+ consent:["Consent","Freely and knowingly agreeing to something. Sexual contact without consent — or where someone can't consent, or is pressured or tricked into it — is misconduct under this Code, and can be a criminal matter too."],
+ care:["CARE / Learning the Met Way","Belfast Met's four student values: Collaboration, Ambition, Respect, Excellence. The spirit behind the specific obligations in section 02."],
+ placement:["Placement","Work experience arranged through your course. The Code applies there exactly as it does on campus."],
+ sectarian:["Sectarian symbolism","Symbols or clothing linked to Northern Ireland's community conflict — for example certain football kit. Not permitted on campus because of its potential to cause disharmony."],
+ protected:["Protected characteristic","A personal characteristic — gender, nationality, ethnicity, disability, sexual orientation, religious belief, age, political opinion, dependant status or marital status — that it's unlawful to discriminate against someone for."]
+};
+function gloss(h){return String(h).replace(/\{\{(\w+)\|(.*?)\}\}/g,function(m,k,t){
+  return TERMS[k]?'<button class="gl" data-t="'+k+'">'+t+'</button>':t;});}
+
+var popOpen=null;
+function closePop(){$("pop").hidden=true;popOpen=null;}
+document.addEventListener("click",function(e){
+  var b=e.target.closest(".gl");
+  if(!b){if(!e.target.closest("#pop"))closePop();return;}
+  e.preventDefault();e.stopPropagation();
+  if(popOpen===b){closePop();return;}
+  var t=TERMS[b.dataset.t],p=$("pop");
+  p.innerHTML="<b>"+t[0]+"</b>"+t[1];p.hidden=false;
+  var r=b.getBoundingClientRect(),w=Math.min(320,window.innerWidth-24),x=r.left+window.scrollX;
+  p.style.width=w+"px";
+  if(x+w>window.innerWidth-12)x=window.innerWidth-w-12;
+  p.style.left=Math.max(12,x)+"px";p.style.top=(r.bottom+window.scrollY+8)+"px";
+  popOpen=b;Snd.fx("open");
+},true);
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closePop();});
+window.addEventListener("scroll",function(){if(popOpen)closePop();},{passive:true});
+
+function renderGlossList(){
+  var q=$("search").value.toLowerCase().trim(),
+      keys=Object.keys(TERMS).filter(function(k){
+        var t=TERMS[k];
+        if(!q)return true;
+        return (t[0]+" "+t[1]).toLowerCase().indexOf(q)>-1;
+      }).sort(function(a,b){return TERMS[a][0].localeCompare(TERMS[b][0]);});
+  $("count").textContent=keys.length+" of "+Object.keys(TERMS).length+" terms";
+  $("glist").innerHTML=keys.length?keys.map(function(k){
+    var t=TERMS[k];
+    return '<div class="entry"><b>'+t[0]+"</b><p>"+t[1]+"</p></div>";
+  }).join(""):'<div class="entry"><p>Nothing matches that.</p></div>';
+}
+$("search").addEventListener("input",renderGlossList);
+
+/* ---------- CARE values ---------- */
+var CARE=[
+ {k:"Collaboration",items:["I will work with fellow students and staff to support everyone's learning.","I will support others in my class when I can.","I will ask for support when I need it.","I will be a positive member of the Belfast Met learning community."]},
+ {k:"Ambition",items:["I will set goals for my learning and review them regularly.","I will work independently to the best of my ability.","I will develop and maintain positive study habits.","I will give my best in every learning activity."]},
+ {k:"Respect",items:["I will attend all my classes and be on time.","I will treat all staff, students and other College visitors with respect.","I will treat College property and premises with respect.","I will respect the learning of others at all times."]},
+ {k:"Excellence",items:["I will push myself to do the best that I can in everything I do.","I will use feedback from my tutors and others to improve.","I will accept that setbacks happen and will continue to work hard.","I will try new ways of learning to help me succeed on my course."]}
+];
+function renderCare(){
+  $("care").innerHTML='<div class="grid4">'+CARE.map(function(c){
+    return '<div class="card tint-t" style="margin:0"><h4>'+c.k+'</h4><ul style="padding-left:18px;font-size:14.5px;margin:0">'+
+      c.items.map(function(i){return "<li>"+i+"</li>";}).join("")+"</ul></div>";
+  }).join("")+"</div>";
+}
+
+/* ---------- specific obligations ---------- */
+var OBLIGATIONS=[
+ {b:"Know the Code",d:"Read it at induction and after any update, and live up to it — not just on the day you signed it."},
+ {b:"Be respectful",d:"Polite and courteous to staff, students, visitors, employers and neighbours."},
+ {b:"Respect difference",d:"Regardless of {{protected|gender, nationality, ethnicity, disability, sexual orientation, religion, age, political opinion, dependant status or marital status}}."},
+ {b:"Look after property",d:"The College's, staff's, other students' and visitors' — take reasonable care of it."},
+ {b:"Carry your student ID",d:"Whenever you're on College premises or at College business or activities."},
+ {b:"Know College policy",d:"Familiarise yourself with, and follow, the College's other relevant policies."},
+ {b:"Drive safely on campus",d:"Observe speed limits and any local instructions about disabled or reserved parking."},
+ {b:"Keep your academic standard up",d:"Whatever level your Class Lecturer sets as satisfactory."},
+ {b:"Leave your phone alone in class",d:"No mobile technology in class without your lecturer's permission."},
+ {b:"No {{sectarian|sectarian symbolism}}",d:"Nothing linked to Northern Ireland's community conflict, on or off campus."},
+ {b:"No food or drink in restricted areas",d:"Classrooms and other prohibited areas — keep it out."},
+ {b:"No animals on campus",d:"Except assistance dogs."},
+ {b:"No smoking or vaping",d:"Anywhere on campus, full stop."},
+ {b:"Keep the noise down",d:"Shouting, phones, music players (including in-car), car horns — avoid causing a nuisance."},
+ {b:"Behave off campus too",d:"Avoid antisocial behaviour near the College, on your way to or from it, or in student accommodation."},
+ {b:"Treat online learning like the classroom",d:"Be on time, address your tutor and peers respectfully and patiently, stay attentive and interactive, keep your phone away without permission, and join from a suitable space free of distractions — ideally not your bed."}
+];
+function renderObligations(){
+  $("obligations").innerHTML=OBLIGATIONS.map(function(o){
+    return "<li><b>"+o.b+"</b>"+gloss(o.d)+"</li>";
+  }).join("");
+}
+
+/* ---------- misconduct categories ---------- */
+var MISCONDUCT=[
+ {t:"Abusive behaviour",
+  body:"<p>Violence, threats, disorder, offensive behaviour or language. Anything amounting to bullying, harassment or unfair treatment linked to a {{protected|protected characteristic}} — or not linked to one at all. Stalking, or any verbal or physical abuse towards someone.</p>"+
+       "<p>Also covers: making or publishing threatening, abusive or insulting statements about someone (spoken, written, in images, or online); filming or photographing staff, students or visitors without permission; and any sexual act or contact without {{consent|consent}}, including when someone can't consent or is pressured or tricked into it.</p>"},
+ {t:"Academic misconduct",
+  body:"<ul><li>Cheating of any kind to get credit or a better grade, or to avoid a worse one.</li>"+
+       "<li>Forging, faking or misusing College records, documents, or someone's identity, in relation to an exam, assessment, or College administration.</li>"+
+       "<li>Plagiarism and breach of copyright — including using AI in your work without declaring it.</li>"+
+       "<li>Not submitting work on time, without agreeing that in advance or having an acceptable reason.</li></ul>"},
+ {t:"Attendance &amp; punctuality",
+  body:"<p>Poor or inconsistent attendance, or persistent lateness — for classes, a module, your programme, placement, work, or any additional classes.</p>"},
+ {t:"Behavioural misconduct",
+  body:"<ul><li>Smoking or vaping anywhere on campus.</li>"+
+       "<li>Having, using, sharing or dealing legal or illegal drugs — including misusing prescription medication — on College property or at any College activity.</li>"+
+       "<li>Carrying a weapon: anything made, adapted, or intended for use to injure someone.</li>"+
+       "<li>Alcohol on College property or at a College activity, without written permission from a Director in advance.</li>"+
+       "<li>Gambling, on College property or at a College activity.</li>"+
+       "<li>Littering anywhere on campus.</li>"+
+       "<li>Off-campus antisocial or criminal behaviour that damages the College's reputation.</li>"+
+       "<li>Sexual activity, or lewd, indecent or obscene conduct that would reasonably offend others, on College property or at a College activity.</li></ul>"},
+ {t:"Disorderly misconduct",
+  body:"<ul><li>Damaging, defacing or misusing College, staff, student or visitor property.</li>"+
+       "<li>Disrupting a class, lecture, exam, meeting or other College function — on campus or elsewhere.</li>"+
+       "<li>Disrupting the College's administrative work or official duties.</li>"+
+       "<li>Stopping a staff member, student or visitor doing something they're entitled to do, or blocking their way in or out.</li></ul>"},
+ {t:"Fraudulent misconduct",
+  body:"<ul><li>Not disclosing information required under the College's Student Criminal Convictions Disclosure Policy.</li>"+
+       "<li>Stealing, or getting money, property or an advantage by deception.</li>"+
+       "<li>Altering or faking documents relating to College staff, students, employers or visitors.</li></ul>"},
+ {t:"General misconduct",
+  body:"<ul><li>Ignoring College policies, or not co-operating with a disciplinary process.</li>"+
+       "<li>Helping, encouraging or plotting with others to break this Code.</li>"+
+       "<li>Ignoring the reasonable instructions of College staff, an employer or placement provider, or staff running a College event elsewhere.</li>"+
+       "<li>Refusing to give your name and details, or show your student ID, when reasonably asked.</li>"+
+       "<li>Refusing to pay money you owe the College, or ignoring Library rules and restrictions.</li>"+
+       "<li>Making false, malicious or vexatious complaints.</li>"+
+       "<li>Wearing {{sectarian|sectarian symbolism}} — for example, Celtic or Rangers kit.</li></ul>"},
+ {t:"Health &amp; safety misconduct",
+  body:"<ul><li>Interfering with electrical, mechanical or other College equipment, services or installations.</li>"+
+       "<li>Tampering with, or setting off, safety or warning equipment without good reason.</li>"+
+       "<li>Starting a fire.</li>"+
+       "<li>Any genuinely dangerous activity.</li>"+
+       "<li>Driving, operating machinery, or using tools while under the influence of drink or drugs.</li></ul>"},
+ {t:"IT, internet &amp; social media misconduct",
+  body:"<ul><li>Getting into, or using, a computer, system, network, software or data without authorisation — or changing any of it.</li>"+
+       "<li>Ignoring the laws, licences and contracts that cover the software and hardware you use.</li>"+
+       "<li>Using College computing resources for anything you're not supposed to, or breaching the {{iaup|IT Acceptable Usage Policy}}.</li>"+
+       "<li>Social media use that damages the College's reputation, or that of its staff, students, employers or placement providers.</li>"+
+       "<li>Creating, storing, sharing or showing obscene, pornographic or offensive material through College facilities.</li>"+
+       "<li>Sharing your College network password, or letting anyone outside your class join an online lesson or see your course materials, without staff authorisation.</li></ul>"},
+ {t:"Sexual misconduct",
+  body:"<p>Taken extremely seriously. Includes, but isn't limited to: sexual abuse, sexual harassment, sexual assault, rape, unwanted sexual advances, conduct that creates an intimidating, hostile, degrading or humiliating environment, offering or pressuring for sexual favours, and sharing explicit images or footage of someone without their {{consent|consent}}.</p>"+
+       "<p><strong>If any of this happens to you, or you see it happen — tell someone.</strong> See the support box below this list.</p>"}
+];
+function renderMisconduct(){
+  $("misconduct").innerHTML=MISCONDUCT.map(function(r,i){
+    return '<div class="acc"><button class="acc-head" data-a="mb'+i+'" aria-expanded="false">'+
+      '<span class="n">3.'+(i+1)+'</span><span class="t">'+r.t+'</span><span class="cx">+</span></button>'+
+      '<div class="acc-body" id="mb'+i+'" hidden>'+gloss(r.body)+"</div></div>";
+  }).join("");
+  Array.prototype.forEach.call($("misconduct").querySelectorAll(".acc-head"),function(b){
+    b.addEventListener("click",function(){
+      var p=$(b.dataset.a),open=!p.hidden;
+      p.hidden=open;b.setAttribute("aria-expanded",String(!open));
+      b.querySelector(".cx").textContent=open?"+":"−";Snd.fx("open");
+    });
+  });
+}
+
+/* ---------- quiz ---------- */
+var CQUIZ=[
+ {q:"You want to check your phone during class. What do you do?",
+  a:["Just check it quietly, everyone does it","Ask your lecturer first","Only check it if it's under the desk"],r:1,
+  fb:"Ask first. Mobile technology in class needs your lecturer's permission — that includes phones in online sessions too."},
+ {q:"You're between classes and step outside for a vape. Is that allowed?",
+  a:["Yes, as long as you're outside","No — smoking and vaping aren't allowed anywhere on campus","Only in designated smoking shelters"],r:1,
+  fb:"No, nowhere on campus. There's no outdoor exception."},
+ {q:"You're on a work placement arranged through your course. Does the Code of Conduct still apply?",
+  a:["No, that's the employer's rules now","Yes — placements and work experience are covered too","Only if the placement is on College premises"],r:1,
+  fb:"Yes. The Code follows you to placement, official College events, accommodation and online classes — not just the building."},
+ {q:"You use an AI tool to write part of an assignment and don't mention it. What is that?",
+  a:["Fine, as long as the work is good","Academic misconduct","Only a problem if a lecturer asks directly"],r:1,
+  fb:"Academic misconduct — plagiarism explicitly includes undeclared use of AI. Declare it, don't hide it."},
+ {q:"A friend outside your class wants to sit in on your online lesson. Can you let them?",
+  a:["Sure, it's just watching","Not without explicit authorisation from College staff","Only if they stay off camera"],r:1,
+  fb:"Not without staff authorisation. Letting anyone outside the class group access your online lesson or materials is IT misconduct, same as sharing your login."},
+ {q:"You're unhappy with how the College handled a complaint, and you're still unhappy after using their complaints process. What next?",
+  a:["Nothing more you can do","Take it to the Northern Ireland Public Services Ombudsman","Post about it on social media"],r:1,
+  fb:"NIPSO — the independent Ombudsman — but only after you've been through the College's own complaints process first."},
+ {q:"How long does the Code of Conduct apply to you for?",
+  a:["Just during term time","From enrolment until you complete your course","Only while you're under 18"],r:1,
+  fb:"From the moment you enrol until you finish your course — full stop, not just term time."},
+ {q:"What's the most serious outcome for a proven, serious or repeated breach of the Code?",
+  a:["A verbal warning only","Dismissal from the College","Nothing — first breaches are always ignored"],r:1,
+  fb:"Dismissal from the College is a real possible outcome for serious or repeated breaches, on top of whatever else the disciplinary process decides."}
+];
+function makeQuiz(el,data,label,msgs){
+  var i=0,score=0;
+  function draw(){
+    if(i>=data.length){
+      var m=score===data.length?msgs[0]:(score>=data.length-2?msgs[1]:msgs[2]);
+      $(el).innerHTML='<p class="qq">'+score+" out of "+data.length+'</p><p style="font-size:16px">'+m+
+        '</p><button class="btn btn-sm" id="'+el+'-again" style="margin-top:10px">Try again</button>';
+      $(el+"-again").addEventListener("click",function(){i=0;score=0;Snd.fx("blip");draw();});
+      return;
+    }
+    var q=data[i];
+    $(el).innerHTML='<p class="qn">'+label+" "+(i+1)+" of "+data.length+" · score "+score+"</p>"+
+      '<p class="qq">'+q.q+"</p>"+
+      q.a.map(function(t,k){return '<button class="opt" data-i="'+k+'">'+t+"</button>";}).join("")+
+      '<div class="fb" id="'+el+'-fb" hidden></div>';
+    Array.prototype.forEach.call($(el).querySelectorAll(".opt"),function(b){
+      b.addEventListener("click",function(){
+        var k=+b.dataset.i,ok=(k===q.r);
+        if(ok)score++;
+        Snd.fx(ok?"right":"wrong");
+        Array.prototype.forEach.call($(el).querySelectorAll(".opt"),function(x){
+          x.disabled=true;
+          if(+x.dataset.i===q.r)x.classList.add("right");
+          else if(x===b)x.classList.add("wrong");});
+        var fb=$(el+"-fb");
+        fb.className="fb"+(ok?"":" bad");
+        fb.innerHTML="<b>"+(ok?"Correct":"Not quite")+"</b>"+q.fb+
+          '<div style="margin-top:12px"><button class="btn btn-sm" id="'+el+'-next">'+
+          (i===data.length-1?"See your score":"Next")+"</button></div>";
+        fb.hidden=false;
+        $(el+"-next").addEventListener("click",function(){i++;draw();});
+      });
+    });
+  }
+  draw();
+}
+
+/* ---------- signature pad ---------- */
+var sigCtx,hasSig=false;
+function initSig(){
+  var c=$("sigpad"),dpr=window.devicePixelRatio||1;
+  function size(){
+    var w=c.clientWidth||c.parentElement.clientWidth,h=180;
+    c.width=w*dpr;c.height=h*dpr;
+    sigCtx=c.getContext("2d");sigCtx.scale(dpr,dpr);
+    sigCtx.lineWidth=2.4;sigCtx.lineCap="round";sigCtx.lineJoin="round";
+    sigCtx.strokeStyle="#1B1533";
+  }
+  size();
+  window.addEventListener("resize",function(){var had=hasSig;size();if(!had)clearSig();});
+  var drawing=false,last=null;
+  function pos(e){
+    var r=c.getBoundingClientRect();
+    var cx=(e.touches?e.touches[0].clientX:e.clientX)-r.left;
+    var cy=(e.touches?e.touches[0].clientY:e.clientY)-r.top;
+    return {x:cx,y:cy};
+  }
+  function start(e){drawing=true;hasSig=true;last=pos(e);e.preventDefault();}
+  function move(e){
+    if(!drawing)return;
+    var p=pos(e);
+    sigCtx.beginPath();sigCtx.moveTo(last.x,last.y);sigCtx.lineTo(p.x,p.y);sigCtx.stroke();
+    last=p;e.preventDefault();
+  }
+  function end(){drawing=false;}
+  c.addEventListener("mousedown",start);c.addEventListener("mousemove",move);
+  window.addEventListener("mouseup",end);
+  c.addEventListener("touchstart",start,{passive:false});
+  c.addEventListener("touchmove",move,{passive:false});
+  c.addEventListener("touchend",end);
+}
+function clearSig(){
+  var c=$("sigpad");
+  sigCtx.clearRect(0,0,c.width,c.height);
+  sigCtx.fillStyle="#F7F2E8";sigCtx.fillRect(0,0,c.width,c.height);
+  hasSig=false;
+}
+$("sigClear").addEventListener("click",function(){clearSig();Snd.fx("blip");});
+
+/* ---------- declaration: validate, download, print, email ---------- */
+function todayStr(){
+  return new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+}
+$("fDate").value=todayStr();
+
+function validateDeclaration(){
+  var missing=[];
+  if(!$("fName").value.trim())missing.push("your full name");
+  if(!$("fEmail").value.trim()||$("fEmail").value.indexOf("@")<0)missing.push("a valid email address");
+  if(!$("fCourse").value.trim())missing.push("your course / programme");
+  if(!$("c1").checked||!$("c2").checked||!$("c3").checked)missing.push("all three tick boxes");
+  if(!hasSig)missing.push("your signature");
+  return missing;
+}
+function showMsg(text,bad){
+  var m=$("declareMsg");
+  m.className="fb"+(bad?" bad":"");
+  m.innerHTML="<b>"+(bad?"Not quite ready to sign":"Declaration generated")+"</b>"+text;
+  m.hidden=false;
+}
+function declarationData(){
+  return {
+    name:$("fName").value.trim(),
+    email:$("fEmail").value.trim(),
+    course:$("fCourse").value.trim(),
+    campus:$("fCampus").value.trim()||"—",
+    date:$("fDate").value,
+    sig:$("sigpad").toDataURL("image/png")
+  };
+}
+function buildDeclarationHTML(d){
+  return '<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8">'+
+    '<title>Code of Conduct declaration — '+d.name+'</title>'+
+    '<style>body{font-family:Georgia,serif;background:#F7F2E8;color:#1B1533;padding:40px;max-width:680px;margin:0 auto}'+
+    'h1{font-family:system-ui,sans-serif;font-size:22px;border-bottom:3px solid #1B1533;padding-bottom:12px}'+
+    'table{width:100%;border-collapse:collapse;margin:18px 0}td{padding:6px 0;vertical-align:top}'+
+    'td:first-child{font-weight:bold;width:160px}ol{padding-left:20px}li{margin-bottom:10px}'+
+    'img{border:2px solid #1B1533;background:#fff;margin-top:8px;max-width:100%}'+
+    '.foot{font-size:12px;color:#4A4166;margin-top:30px;border-top:1px dashed #4A4166;padding-top:14px}</style></head><body>'+
+    "<h1>Belfast Met — Student Code of Conduct: Declaration</h1>"+
+    "<table>"+
+    "<tr><td>Name</td><td>"+d.name+"</td></tr>"+
+    "<tr><td>Email</td><td>"+d.email+"</td></tr>"+
+    "<tr><td>Course</td><td>"+d.course+"</td></tr>"+
+    "<tr><td>Campus</td><td>"+d.campus+"</td></tr>"+
+    "<tr><td>Date</td><td>"+d.date+"</td></tr>"+
+    "</table>"+
+    "<p>By signing below, I confirm:</p>"+
+    "<ol>"+
+    "<li>I have read this plain-English summary and the full Student Code of Conduct policy, and I understand what's expected of me as a Belfast Met student.</li>"+
+    "<li>I understand the Code applies to me from enrolment until I finish my course — on campus, at College events off campus, on placement or at work, in my accommodation, and online — and that breaching it can lead to disciplinary action, up to and including dismissal from the College for serious or repeated breaches.</li>"+
+    "<li>I agree to abide by the Student Code of Conduct for the duration of my course at Belfast Met.</li>"+
+    "</ol>"+
+    "<p><strong>Signature:</strong></p><img src=\""+d.sig+"\" width=\"400\" height=\"120\" alt=\"Signature\">"+
+    '<p class="foot">This is a student-generated declaration summarising the Belfast Met Student Code of Conduct policy. The binding document is the College\'s own published policy: '+PDF_URL+'</p>'+
+    "</body></html>";
+}
+function slug(s){return (s||"student").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");}
+
+var everDownloaded=false;
+$("btnDownload").addEventListener("click",function(){
+  var missing=validateDeclaration();
+  if(missing.length){showMsg("You still need: "+missing.join(", ")+".",true);Snd.fx("wrong");return;}
+  var d=declarationData(),html=buildDeclarationHTML(d);
+  var blob=new Blob([html],{type:"text/html"});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement("a");
+  a.href=url;a.download="code-of-conduct-declaration-"+slug(d.name)+".html";
+  document.body.appendChild(a);a.click();document.body.removeChild(a);
+  setTimeout(function(){URL.revokeObjectURL(url);},4000);
+  everDownloaded=true;$("btnEmail").disabled=false;
+  showMsg("Your signed copy has just downloaded. Keep it somewhere safe — then use the email button below to send James a copy.",false);
+  Snd.fx("sign");toast("Declaration downloaded","Signed");
+});
+
+$("btnPrint").addEventListener("click",function(){
+  var missing=validateDeclaration();
+  if(missing.length){showMsg("You still need: "+missing.join(", ")+".",true);Snd.fx("wrong");return;}
+  var d=declarationData();
+  $("printable").innerHTML=buildDeclarationHTML(d).replace(/^[\s\S]*<body>/,"").replace(/<\/body>[\s\S]*$/,"");
+  window.print();
+});
+
+$("btnEmail").addEventListener("click",function(){
+  var missing=validateDeclaration();
+  if(missing.length){showMsg("You still need: "+missing.join(", ")+".",true);Snd.fx("wrong");return;}
+  var d=declarationData();
+  var subject="Code of Conduct declaration — "+d.name+" — "+d.course;
+  var body="Hi James,\n\nI've read and agreed to the Belfast Met Student Code of Conduct. My signed declaration is downloaded and attached to this email — please let me know if it hasn't come through.\n\n"+
+    "Name: "+d.name+"\nEmail: "+d.email+"\nCourse: "+d.course+"\nCampus: "+d.campus+"\nDate: "+d.date+"\n\n"+
+    "I confirm I've read the full policy, understand the Code applies on and off campus and online for the whole course, and I agree to abide by it.\n\nThanks,\n"+d.name;
+  window.location.href="mailto:jbell@belfastmet.ac.uk?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  Snd.fx("blip");
+});
+
+/* ---------- pages ---------- */
+var PAGES=["why","obl","mis","con","quiz","sign","gl"],
+    NAMES={why:"Why this exists",obl:"Your obligations",mis:"Misconduct",con:"Consequences",quiz:"Quiz",sign:"Sign & commit",gl:"Glossary"},
+    seen={},TOTAL=7;
+function go(id){
+  PAGES.forEach(function(p){$(p).hidden=(p!==id);});
+  Array.prototype.forEach.call(document.querySelectorAll(".nav-btn"),function(b){
+    b.setAttribute("aria-current",String(b.dataset.p===id));});
+  window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  if(!seen[id]){
+    seen[id]=true;
+    var n=Object.keys(seen).length;
+    $("progtxt").textContent=n+"/"+TOTAL;
+    document.querySelector(".progress-bar i").style.width=(n/TOTAL*100)+"%";
+    if(n===TOTAL){Snd.fx("unlock");toast("You've seen the whole thing. Section 06 is where you sign.","Complete");}
+    else{Snd.fx("unlock");toast(NAMES[id]);}
+  } else {Snd.fx("blip");}
+}
+Array.prototype.forEach.call(document.querySelectorAll(".nav-btn"),function(b){
+  b.addEventListener("click",function(){go(b.dataset.p);});});
+
+/* ---------- boot ---------- */
+$("start").addEventListener("click",function(){
+  if(!Snd.on){var on=Snd.toggle();
+    $("sound").textContent=on?"♪ Sound on":"♪ Sound off";
+    $("sound").setAttribute("aria-pressed",String(on));}
+  $("title").style.display="none";
+  $("shell").hidden=false;
+
+  renderCare();renderObligations();renderMisconduct();renderGlossList();
+  initSig();clearSig();
+  makeQuiz("cquiz",CQUIZ,"Question",[
+    "Full marks. You know this Code better than most people who've signed it.",
+    "Strong. Worth a second look at whichever ones you missed before you sign.",
+    "Worth going back through sections 02 and 03 before you sign — it's quick, and it's the bit that actually matters."]);
+
+  go("why");
+});
+</script>
+</body>
+</html>
