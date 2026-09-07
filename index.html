@@ -135,7 +135,8 @@ button{font:inherit;cursor:pointer}
 .formcard{background:#fff;border:var(--border);box-shadow:var(--shadow);padding:26px 28px}
 .field{margin-bottom:18px}
 .field label{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
-.field input[type=text],.field input[type=email]{width:100%;border:var(--border-sm);background:var(--paper);padding:11px 13px;font:inherit;font-size:15px}
+.field input[type=text],.field input[type=email],.field select{width:100%;border:var(--border-sm);background:var(--paper);padding:11px 13px;font:inherit;font-size:15px}
+.field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) center,calc(100% - 15px) center;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
 .field input:read-only{color:var(--dim)}
 .checklist{border-top:2px dashed var(--ink);border-bottom:2px dashed var(--ink);padding:18px 0;margin:22px 0}
 .checklist label{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:15px}
@@ -239,7 +240,7 @@ button{font:inherit;cursor:pointer}
 
   <div class="card tint-t">
     <h4>If something's happened to you</h4>
-    <p>If you've experienced anything covered by <strong>Abusive</strong> or <strong>Sexual misconduct</strong> above — from someone else, whether they're a student or not — that's not something you have to sort out alone. Talk to <strong>James</strong>, contact <strong>Safeguarding</strong> at <a href="mailto:safeguarding@belfastmet.ac.uk">safeguarding@belfastmet.ac.uk</a>, or reach <strong>Student Counselling</strong> via Inspire — confidential, 24/7, all year: <strong>0808 800 0032</strong> or <a href="https://www.inspiresupporthub.org/students/">inspiresupporthub.org/students</a> (log-on <strong>BMETHUB</strong>). You don't need to be in crisis, and you don't need a referral.</p>
+    <p>If you've experienced anything covered by <strong>Abusive</strong> or <strong>Sexual misconduct</strong> above — from someone else, whether they're a student or not — that's not something you have to sort out alone. Talk to your <strong>course coordinator or personal tutor</strong>, contact <strong>Safeguarding</strong> at <a href="mailto:safeguarding@belfastmet.ac.uk">safeguarding@belfastmet.ac.uk</a>, or reach <strong>Student Counselling</strong> via Inspire — confidential, 24/7, all year: <strong>0808 800 0032</strong> or <a href="https://www.inspiresupporthub.org/students/">inspiresupporthub.org/students</a> (log-on <strong>BMETHUB</strong>). You don't need to be in crisis, and you don't need a referral.</p>
   </div>
 </div></section>
 
@@ -263,7 +264,7 @@ button{font:inherit;cursor:pointer}
     </div>
     <div class="card tint-o">
       <h4>If you disagree with an outcome</h4>
-      <p>Talk to James first. The disciplinary process itself has its own right of appeal, and you'll be told how to use it if it comes to that.</p>
+      <p>Talk to your course coordinator or personal tutor first. The disciplinary process itself has its own right of appeal, and you'll be told how to use it if it comes to that.</p>
     </div>
   </div>
 
@@ -287,7 +288,7 @@ button{font:inherit;cursor:pointer}
 <section class="page" id="sign" hidden><div class="wrap">
   <span class="tag">06 — Sign &amp; commit</span>
   <h2>Make it <em>official</em></h2>
-  <p class="lede">Fill this in, sign it, and you'll get a copy to keep and a copy to send to James. Nothing here is stored anywhere else — it only exists on this page until you download or email it.</p>
+  <p class="lede">Fill this in, sign it, and you'll get a copy to keep and a copy to send to your lecturer. Nothing here is stored anywhere else — it only exists on this page until you download or email it.</p>
 
   <div class="card tint-t">
     <h4>Before you sign</h4>
@@ -299,6 +300,7 @@ button{font:inherit;cursor:pointer}
     <div class="field"><label for="fEmail">Belfast Met email</label><input id="fEmail" type="email" placeholder="you@student.belfastmet.ac.uk" autocomplete="email"></div>
     <div class="field"><label for="fCourse">Course / programme</label><input id="fCourse" type="text" placeholder="e.g. Creative Media Practice (Game Development)" autocomplete="off"></div>
     <div class="field"><label for="fCampus">Campus</label><input id="fCampus" type="text" placeholder="e.g. Castlereagh" autocomplete="off"></div>
+    <div class="field"><label for="fLecturer">Send my declaration to</label><select id="fLecturer"></select></div>
 
     <div class="checklist">
       <label><input type="checkbox" id="c1"><span>I have read this summary and the full Student Code of Conduct policy, and I understand what's expected of me as a Belfast Met student.</span></label>
@@ -323,9 +325,9 @@ button{font:inherit;cursor:pointer}
   <div class="declare-actions">
     <button class="btn" id="btnDownload">⬇ Download my signed copy</button>
     <button class="btn btn-sm btn-t" id="btnPrint">🖶 Print / Save as PDF</button>
-    <button class="btn btn-sm btn-p" id="btnEmail" disabled>✉ Email a copy to James Bell</button>
+    <button class="btn btn-sm btn-p" id="btnEmail" disabled>✉ Email a copy to my lecturer</button>
   </div>
-  <p class="email-hint">The email button opens your own email app, pre-addressed to <strong>jbell@belfastmet.ac.uk</strong>, with the declaration text filled in. Browsers won't let a webpage attach a file to your email automatically, so <strong>download your copy first</strong> and attach it yourself before you hit send.</p>
+  <p class="email-hint" id="emailHint">The email button opens your own email app, pre-addressed to whichever lecturer you choose above, with the declaration text filled in. Browsers won't let a webpage attach a file to your email automatically, so <strong>download your copy first</strong> and attach it yourself before you hit send.</p>
 </div></section>
 
 <!-- ============ 07 GLOSSARY ============ -->
@@ -342,7 +344,7 @@ button{font:inherit;cursor:pointer}
 
 <footer class="site-footer"><div class="wrap">
   <p>A plain-English student guide to Belfast Met's Student Code of Conduct (v10.0, reviewed 02/07/2026), built for induction. It's a summary, not the policy — where the two differ, the College's published <a href="https://www.belfastmet.ac.uk/media/ub0nm4j3/student-code-of-conduct.pdf" target="_blank" rel="noopener">Student Code of Conduct (PDF)</a> is what counts.</p>
-  <p>Nothing typed or drawn on this page is sent anywhere or stored anywhere except your own downloaded file and, if you choose to send it, your own email. Questions: <a href="mailto:jbell@belfastmet.ac.uk">jbell@belfastmet.ac.uk</a>.</p>
+  <p>Nothing typed or drawn on this page is sent anywhere or stored anywhere except your own downloaded file and, if you choose to send it, your own email. Questions? Ask the lecturer who set you this task.</p>
 </div></footer>
 
 <div id="printable"></div>
@@ -351,6 +353,26 @@ button{font:inherit;cursor:pointer}
 <script>
 var $=function(i){return document.getElementById(i);};
 var PDF_URL="https://www.belfastmet.ac.uk/media/ub0nm4j3/student-code-of-conduct.pdf";
+var LECTURERS=[
+ {name:"James Bell",email:"jbell@belfastmet.ac.uk"},
+ {name:"Phil Roddy",email:"proddy@belfastmet.ac.uk"},
+ {name:"Anna Owens",email:"AOwens@belfastmet.ac.uk"}
+];
+function renderLecturers(){
+  $("fLecturer").innerHTML='<option value="" disabled selected>— choose your lecturer —</option>'+
+    LECTURERS.map(function(l,i){return '<option value="'+i+'">'+l.name+"</option>";}).join("");
+}
+function selectedLecturer(){
+  var v=$("fLecturer").value;
+  return v===""?null:LECTURERS[+v];
+}
+function updateLecturerUI(){
+  var l=selectedLecturer();
+  $("btnEmail").textContent=l?"✉ Email a copy to "+l.name:"✉ Email a copy to my lecturer";
+  $("emailHint").innerHTML=l?
+    "The email button opens your own email app, pre-addressed to <strong>"+l.name+"</strong> (<strong>"+l.email+"</strong>), with the declaration text filled in. Browsers won't let a webpage attach a file to your email automatically, so <strong>download your copy first</strong> and attach it yourself before you hit send."
+    :"The email button opens your own email app, pre-addressed to whichever lecturer you choose above, with the declaration text filled in. Browsers won't let a webpage attach a file to your email automatically, so <strong>download your copy first</strong> and attach it yourself before you hit send.";
+}
 
 /* ---------- audio (chiptune toggle, same engine as the Day One guide) ---------- */
 var Snd={ctx:null,on:false,mus:null,timer:null,
@@ -657,6 +679,7 @@ function clearSig(){
   hasSig=false;
 }
 $("sigClear").addEventListener("click",function(){clearSig();Snd.fx("blip");});
+$("fLecturer").addEventListener("change",updateLecturerUI);
 
 /* ---------- declaration: validate, download, print, email ---------- */
 function todayStr(){
@@ -669,6 +692,7 @@ function validateDeclaration(){
   if(!$("fName").value.trim())missing.push("your full name");
   if(!$("fEmail").value.trim()||$("fEmail").value.indexOf("@")<0)missing.push("a valid email address");
   if(!$("fCourse").value.trim())missing.push("your course / programme");
+  if(!selectedLecturer())missing.push("who to send it to");
   if(!$("c1").checked||!$("c2").checked||!$("c3").checked)missing.push("all three tick boxes");
   if(!hasSig)missing.push("your signature");
   return missing;
@@ -685,6 +709,7 @@ function declarationData(){
     email:$("fEmail").value.trim(),
     course:$("fCourse").value.trim(),
     campus:$("fCampus").value.trim()||"—",
+    lecturer:selectedLecturer(),
     date:$("fDate").value,
     sig:$("sigpad").toDataURL("image/png")
   };
@@ -704,6 +729,7 @@ function buildDeclarationHTML(d){
     "<tr><td>Email</td><td>"+d.email+"</td></tr>"+
     "<tr><td>Course</td><td>"+d.course+"</td></tr>"+
     "<tr><td>Campus</td><td>"+d.campus+"</td></tr>"+
+    "<tr><td>Sent to</td><td>"+(d.lecturer?d.lecturer.name+" ("+d.lecturer.email+")":"—")+"</td></tr>"+
     "<tr><td>Date</td><td>"+d.date+"</td></tr>"+
     "</table>"+
     "<p>By signing below, I confirm:</p>"+
@@ -730,7 +756,7 @@ $("btnDownload").addEventListener("click",function(){
   document.body.appendChild(a);a.click();document.body.removeChild(a);
   setTimeout(function(){URL.revokeObjectURL(url);},4000);
   everDownloaded=true;$("btnEmail").disabled=false;
-  showMsg("Your signed copy has just downloaded. Keep it somewhere safe — then use the email button below to send James a copy.",false);
+  showMsg("Your signed copy has just downloaded. Keep it somewhere safe — then use the email button below to send "+d.lecturer.name+" a copy.",false);
   Snd.fx("sign");toast("Declaration downloaded","Signed");
 });
 
@@ -746,11 +772,12 @@ $("btnEmail").addEventListener("click",function(){
   var missing=validateDeclaration();
   if(missing.length){showMsg("You still need: "+missing.join(", ")+".",true);Snd.fx("wrong");return;}
   var d=declarationData();
+  var firstName=d.lecturer.name.split(" ")[0];
   var subject="Code of Conduct declaration — "+d.name+" — "+d.course;
-  var body="Hi James,\n\nI've read and agreed to the Belfast Met Student Code of Conduct. My signed declaration is downloaded and attached to this email — please let me know if it hasn't come through.\n\n"+
+  var body="Hi "+firstName+",\n\nI've read and agreed to the Belfast Met Student Code of Conduct. My signed declaration is downloaded and attached to this email — please let me know if it hasn't come through.\n\n"+
     "Name: "+d.name+"\nEmail: "+d.email+"\nCourse: "+d.course+"\nCampus: "+d.campus+"\nDate: "+d.date+"\n\n"+
     "I confirm I've read the full policy, understand the Code applies on and off campus and online for the whole course, and I agree to abide by it.\n\nThanks,\n"+d.name;
-  window.location.href="mailto:jbell@belfastmet.ac.uk?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  window.location.href="mailto:"+encodeURIComponent(d.lecturer.email)+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
   Snd.fx("blip");
 });
 
@@ -783,7 +810,7 @@ $("start").addEventListener("click",function(){
   $("title").style.display="none";
   $("shell").hidden=false;
 
-  renderCare();renderObligations();renderMisconduct();renderGlossList();
+  renderCare();renderObligations();renderMisconduct();renderGlossList();renderLecturers();updateLecturerUI();
   initSig();clearSig();
   makeQuiz("cquiz",CQUIZ,"Question",[
     "Full marks. You know this Code better than most people who've signed it.",

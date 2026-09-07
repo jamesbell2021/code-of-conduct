@@ -8,10 +8,22 @@ Live at: https://jamesbell2021.github.io/code-of-conduct/
 
 - Summarises the Code's purpose, the "Learning the Met Way" (CARE) values, students' specific obligations, and all ten categories of misconduct, in plain language.
 - A short multiple-choice quiz to check understanding before signing.
-- A declaration form: name, email, course, campus, three tick-box confirmations, and a draw-your-own signature pad.
+- A declaration form: name, email, course, campus, a choice of lecturer to send it to, three tick-box confirmations, and a draw-your-own signature pad.
 - **Download** — generates a self-contained HTML file of the signed declaration for the student's own records.
 - **Print / Save as PDF** — opens the browser print dialog on a clean, print-only version of the declaration.
-- **Email** — opens the student's own email client, pre-addressed to `jbell@belfastmet.ac.uk`, with the declaration details filled in. Browsers can't attach files to an email automatically, so students are prompted to attach their downloaded copy before sending.
+- **Email** — opens the student's own email client, pre-addressed to whichever lecturer the student picked from the dropdown, with the declaration details filled in. Browsers can't attach files to an email automatically, so students are prompted to attach their downloaded copy before sending.
+
+### Lecturers students can send to
+
+Edit the `LECTURERS` array near the top of the `<script>` block in `index.html` to add, remove or rename recipients:
+
+```js
+var LECTURERS=[
+ {name:"James Bell",email:"jbell@belfastmet.ac.uk"},
+ {name:"Phil Roddy",email:"proddy@belfastmet.ac.uk"},
+ {name:"Anna Owens",email:"AOwens@belfastmet.ac.uk"}
+];
+```
 
 ## Important
 
